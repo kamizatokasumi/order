@@ -12,15 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('orders', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('user_id');
-            $table->foreignId('tag_id');
-            $table->foreignId('price_id');
-            $table->foreignId('visitor_id');
-            $table->string('name');
-            $table->integer('price');
-            $table->text('description');
-            $table->timestamps();
+            $table->string('name')->nullable(false)->change();
+            $table->integer('price')->nullable(false)->change();
+            $table->text('description')->nullable(false)->change();
         });
     }
 
@@ -29,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('orders');
+        //
     }
 };

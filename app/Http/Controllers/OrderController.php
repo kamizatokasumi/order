@@ -10,9 +10,13 @@ class OrderController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $orders = order::orderBy('id', 'desc')->paginate(5);
+        return view('order.index', compact('orders'));
+
+        Log::debug('test');
+        return view('welcom');
     }
 
     /**
@@ -20,7 +24,7 @@ class OrderController extends Controller
      */
     public function create()
     {
-        //
+        return view('order.create');
     }
 
     /**
@@ -28,7 +32,8 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        order::create($request->all());
+        return redirect()->route('order.index');
     }
 
     /**
@@ -58,8 +63,10 @@ class OrderController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(order $order)
+    public function destroy($id)
     {
-        //
+        $order = order::find($id);
+        $order->delete();
+        return redirect()->route('order.index');
     }
 }

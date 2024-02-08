@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class order extends Model
@@ -13,13 +12,18 @@ class order extends Model
     // テーブルに関連付ける主キー
     protected $primaryKey = 'id';
 
-    // 登録・更新可能なカラムの指定
-    protected $fillable = [
+    //
+    protected $fillable = ['user_id', 'name', 'description', 'volume', 'amount_of_money'];
 
-        'name',
-        'price',
-        'description',
-        'created_at',
-        'updated_at'
-    ];
+    //  商品名テーブルとの外部キー制約
+    public function product()
+    {
+        return $this->belongsTo(Product::class);
+    }
+
+    //  ユーザーテーブルとの外部キー制約
+    public function User()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

@@ -32,7 +32,14 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
-        order::create($request->all());
+        $orders = order::with('User')->get();
+        $orders = order::with('product')->get();
+
+        order::create([
+            /**"price" => $request->price,*/
+            "user_id" => $request->user_id,
+            "description" => $request->description,
+        ]);
         return redirect()->route('order.index');
     }
 

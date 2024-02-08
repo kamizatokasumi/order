@@ -19,27 +19,34 @@
                                             <input type="text" name="name" class="form-control" placeholder="商品名">
                                         </div>
                                     </div>
+
+                                    {{--
                                     <div class="col-12 mb-2 mt-2">
                                         <div class="form-group">
-                                            <input type="text" name="kakaku" class="form-control" placeholder="価格">
+                                            <input type="text" name="price" class="form-control" placeholder="価格">
                                         </div>
                                     </div>
+                                    --}}
+
                                     <div class="col-12 mb-2 mt-2">
                                         <div class="form-group">
                                             <select name="tags" class="form-select">
                                                 <option>分類を選択してください</option>
-                                                    <option value=""></option>
+                                                <option value=""></option>
                                             </select>
                                         </div>
                                     </div>
+
                                     <div class="col-12 mb-2 mt-2">
                                         <div class="form-group">
-                                        <textarea class="form-control" style="height:100px" name="shosai" placeholder="詳細"></textarea>
+                                        <textarea class="form-control" style="height:100px" name="description" placeholder="詳細"></textarea>
                                         </div>
                                     </div>
+
                                     <div class="col-12 mb-2 mt-2">
                                             <button type="submit" class="btn btn-primary w-100">登録</button>
                                     </div>
+                                    
                                 </div>
                             </form>
                             <a href="{{ route('order.index')}} " class="btn btn-secondary mt-5 ">一覧へ戻る</a>

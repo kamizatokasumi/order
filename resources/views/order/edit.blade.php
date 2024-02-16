@@ -8,70 +8,51 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">新規登録</div>
+                    <div class="card-header">編集</div>
                         <div class="card-body">
                             <div style="text-align:right;">
-                                <form action="{{ route('order.store')}}" method="POST">
+                                <form action="{{ route('order.update', $order) }}" method="POST">
+                                @method('PUT')
                                 @csrf
                                 <div class="col-12 mb-2 mt-2">
                                     <div class="form-group">
                                         <select name="supplier_id" class="form-select">
-                                        <option>取引先を選択してください</option>
                                         @foreach( $suppliers as $supplier)
-                                        <option value="{{ $supplier->id }}">{{ $supplier->supplier_name }}</option>
+                                        <option value="{{ $supplier->id }}" {{ $supplier->id == $order->supplier_id ? 'selected' : '' }}>{{ $supplier->supplier_name }}</option>
                                         @endforeach
                                         </select>
-                                        @error('supplier_id')
-                                            <div style="color: red; float: left;">{{ $message }}</div>
-                                        @enderror
                                     </div>
                                 </div>
-
                                 <div class="col-12 mb-2 mt-2">
                                     <div class="form-group">
                                         <select name="product_id" class="form-select">
-                                        <option>商品名を選択してください</option>
                                         @foreach( $products as $product)
-                                        <option value="{{ $product->id }}">{{ $product->product_name }}</option>
+                                        <option value="{{ $product->id }}" {{ $product->id == $order->product_id ? 'selected' : '' }}>{{ $product->product_name }}</option>
                                         @endforeach
                                         </select>
-                                        @error('product_id')
-                                            <div style="color: red; float: left;">{{ $message }}</div>
-                                        @enderror
                                     </div>
                                 </div>
-
                                 <div class="col-12 mb-2 mt-2">
                                     <div class="form-group">
                                         <select name="status_id" class="form-select">
-                                        <option>状態を選択してください</option>
                                         @foreach( $statuses as $status)
-                                        <option value="{{ $status->id }}">{{ $status->name }}</option>
+                                        <option value="{{ $status->id }}" {{ $status->id == $order->status_id ? 'selected' : '' }}>{{ $status->name }}</option>
                                         @endforeach
                                         </select>
-                                        @error('status_id')
-                                            <div style="color: red; float: left;">{{ $message }}</div>
-                                        @enderror
+                                    </div>
+                                </div>
+                                <div class="col-12 mb-2 mt-2">
+                                    <div class="form-group">
+                                        <input type="text" name="volume" value="{{ $order->volume }}" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-12 mb-2 mt-2">
+                                    <div class="form-group">
+                                        <input type="text" name="description" value="{{ $order->description }}" class="form-control"/>
                                     </div>
                                 </div>
 
                                 <div class="col-12 mb-2 mt-2">
-                                    <div class="form-group">
-                                        <input type="text" name="volume" class="form-control" placeholder="数量">
-                                        @error('volume')
-                                        <div style="color: red; float: left;">{{ $message }}</div>
-                                        @enderror
-                                    </div>
-                                </div>
-                                <div class="col-12 mb-2 mt-2">
-                                    <div class="form-group">
-                                        <input type="text" name="description" class="form-control" placeholder="説明">
-                                        @error('description')
-                                            <div style="color: red; float: left;">{{ $message }}</div>
-                                        @enderror
-                                    </div>
-                                </div>
-                                <div class="col-12 mb-2 mt-2 pt-2">
                                     <button type="submit" class="btn btn-primary w-100">登録</button>
                                 </div>
                                 </form>
@@ -84,4 +65,6 @@
     </div>
 </main>
 @endsection
+
+
 

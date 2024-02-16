@@ -42,7 +42,7 @@ return [
     'email' => ':attributeには、有効なメールアドレスを指定してください。',
     'ends_with' => ':attributeには、:valuesのどれかで終わる値を指定してください。',
     'enum' => '選択された:attributeは正しくありません。',
-    'exists' => '選択された:attributeは正しくありません。',
+    'exists' => ':attributeは必ず指定してください。',
     'extensions' => ':attributeは、:valuesの拡張子を指定してください。',
     'file' => ':attributeにはファイルを指定してください。',
     'filled' => ':attributeに値を指定してください。',
@@ -161,9 +161,6 @@ return [
     */
 
     'custom' => [
-        '属性名' => [
-            'ルール名' => 'カスタムメッセージ',
-        ],
         'terms' => [
             'required' => '登録には規約への同意が必須となります。',
         ],
@@ -253,6 +250,15 @@ return [
         'updated_at' => '更新日',
         'username' => 'ユーザー名',
         'year' => '年',
+        'supplier_id' => '取引先',
+        'product_id' => '商品名',
+        'status_id' => '状態',
+        'volume' => '数量',
+        'amount_of_money' => '金額',
+        'supplier_name' => '取引先',
+        'phone_number' => '電話番号',
+        'product_name' => '商品名',
+        'unit_price' => '単価'
     ],
 
 ];

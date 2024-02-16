@@ -11,4 +11,11 @@ class product extends Model
     {
         return $this->hasMany(Order::class);
     }
+
+    protected $fillable = [
+        'product_name',
+        'unit_price',
+        'created_at',
+        'updated_at'
+    ];
 }

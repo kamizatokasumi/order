@@ -23,7 +23,7 @@ class order extends Model
     //  商品名テーブルとの外部キー制約
     public function product()
     {
-        return $this->belongsTo(Product::class);
+        return $this->belongsTo(product::class);
     }
 
     //  ユーザーテーブルとの外部キー制約
@@ -34,7 +34,7 @@ class order extends Model
     //  取引先テーブルとの外部キー制約
     public function supplier()
     {
-        return $this->belongsTo(Supplier::class);
+        return $this->belongsTo(supplier::class);
     }
 
     //  ステータステーブルとの外部キー制約

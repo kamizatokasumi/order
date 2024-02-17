@@ -13,7 +13,7 @@ class OrderController extends Controller
 {
     public function index(Request $request)
     {
-        $orders = Order::select([
+        $orders = order::select([
             'b.id',
             'b.supplier_id',
             'b.product_id',
@@ -83,7 +83,7 @@ class OrderController extends Controller
 
     public function destroy($id)
     {
-        $order = Order::findOrFail($id);
+        $order = order::findOrFail($id);
         // 注文自体を削除する
         $order->delete();
         return redirect()->route('order.index');

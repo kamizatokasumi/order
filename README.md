@@ -75,7 +75,7 @@
 
 ・MySQL 
 
-・composer
+・Composer2.5.5
 
 その他
 

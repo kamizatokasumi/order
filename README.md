@@ -1,14 +1,21 @@
-サービスURL：http://kamizato.xsrv.jp/order/public/register
+# サービスURL：http://kamizato.xsrv.jp/order/public/register
 
-【アプリ概要】
+#　アプリ概要
+
 商品の受注管理を行うアプリ
 
-【主な機能】
+##　主な機能
+
 ・ログイン/ログアウト
+
 ・新規登録機能 
+
 ・詳細確認機能 
+
 ・編集機能 
+
 ・削除機能
+
 ・アクセス権限付与(ログインユーザーのみ閲覧、編集、削除可)
 
 ＃実装予定機能

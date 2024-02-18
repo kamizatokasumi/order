@@ -1,6 +1,6 @@
 サービスURL：http://kamizato.xsrv.jp/order/public/register
 
-＃アプリ概要
+【アプリ概要】
 商品の受注管理を行うアプリ
 
 ＃主な機能

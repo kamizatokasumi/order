@@ -3,8 +3,7 @@
 #　アプリ概要
 
 商品の受注管理を行うアプリ
-![Uploading スクリーンショット 2024-02-17 10.50.44.png…]()
-
+<img width="1436" alt="スクリーンショット 2024-02-17 10 50 44" src="https://github.com/kamizatokasumi/order/assets/153715514/9f5fd5f3-103c-4a3e-afe7-700803c0b540">
 
 ##　主な機能
 
